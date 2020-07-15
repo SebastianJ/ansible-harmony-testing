@@ -1,0 +1,5 @@
+---
+- import_playbook: playbooks/sys/main.yml
+- import_playbook: playbooks/build/main.yml
+- import_playbook: playbooks/golang/main.yml
+- import_playbook: playbooks/harmony/testing/main.yml

@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: yes
+  
+  vars_files:
+    - ../../../vars/harmony.yml
+  
+  tasks:    
+    - name: Create the harmony stress dir
+      file:
+        path: "{{harmony_tools_path}}/harmony-stress"
+        state: directory
+      when: harmony_tools_path is defined
+    
+    - name: Download harmony stress installation script
+      get_url:
+        url: https://bit.ly/harmony-stress-installer
+        dest: "{{harmony_tools_path}}/harmony-stress/install.sh"
+        mode: 0755
+
+    - name: Execute harmony stress installation script
+      shell: "./install.sh --hmy --payload"
+      args:
+        chdir: "{{harmony_tools_path}}/harmony-stress/"

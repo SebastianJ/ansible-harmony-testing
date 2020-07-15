@@ -1,0 +1,5 @@
+.vaultpass
+.retry
+secret
+*.secret
+roles

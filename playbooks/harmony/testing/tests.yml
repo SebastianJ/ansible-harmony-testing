@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: yes
+  
+  vars_files:
+    - ../../../vars/harmony.yml
+  
+  tasks:    
+    - name: Create the harmony tests dir
+      file:
+        path: "{{harmony_tools_path}}/harmony-tests"
+        state: directory
+      when: harmony_tools_path is defined
+    
+    - name: Download harmony tests installation script
+      get_url:
+        url: https://raw.githubusercontent.com/harmony-one/harmony-tests/master/scripts/install.sh
+        dest: "{{harmony_tools_path}}/harmony-tests/install.sh"
+        mode: 0755
+
+    - name: Execute harmony tests installation script
+      shell: "./install.sh"
+      args:
+        chdir: "{{harmony_tools_path}}/harmony-tests/"

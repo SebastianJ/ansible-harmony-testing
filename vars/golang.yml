@@ -1,0 +1,5 @@
+---
+go_ver: 1.14.4
+
+# Custom
+go_user_path: "{{ user_account_path | default('/root') }}/go"
