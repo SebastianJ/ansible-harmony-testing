@@ -1,5 +1,10 @@
 ## Usage
 
+Clone the repo:
+```
+git clone https://github.com/SebastianJ/ansible-harmony-testing.git && cd ansible-harmony-testing.git
+```
+
 Install roles using ansible galaxy:
 ```
 ansible-galaxy install --role-file requirements.yml --roles-path roles
