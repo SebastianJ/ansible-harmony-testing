@@ -2,7 +2,7 @@
 
 Clone the repo:
 ```
-git clone https://github.com/SebastianJ/ansible-harmony-testing.git && cd ansible-harmony-testing.git
+git clone https://github.com/SebastianJ/ansible-harmony-testing.git && cd ansible-harmony-testing
 ```
 
 Install roles using ansible galaxy:
